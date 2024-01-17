@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Get Appointment</ion-title>
+  </ion-toolbar>
+  <style>
+    .clickable {
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+  </style>
+</ion-header>
+
+<ion-content style="--ion-background-color:powderblue;">
+  <br>
+  <ion-datetime-button datetime="date" ></ion-datetime-button>
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime yearValues="2022" monthValues="9,10,11,12" [(ngModel)]="day" id="date" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+  <section class="full-width">
+    <ion-button (click)="select()" style=" margin-left: 10px;">Select</ion-button>
+  </section>
+  <br>
+  <ion-radio-group value="Available Slots" [(ngModel)]="selected">
+    <ion-list-header>
+      <ion-label>Available Slots</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let slot of slots;">
+      <ion-label>{{slot.mySlot}}</ion-label>
+      <ion-radio slot="start" checked="true" value="{{slot.slot}}"></ion-radio>
+    </ion-item>
+
+  </ion-radio-group>
+  <section class="full-width">
+    <ion-button class ="clickable" (click)="getAppointment()" >Get Appointment</ion-button>
+  </section>
+
+  <section class="full-width">
+    <ion-button class ="clickable" (click)="back()">Back</ion-button>
+  </section>
+</ion-content>

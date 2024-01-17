@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="--ion-background-color:rgb(191, 235, 166);">
+  <br>
+  <ion-datetime-button datetime="date" ></ion-datetime-button>
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime yearValues="2022" monthValues="9,10,11,12" [(ngModel)]="day" id="date" presentation="date"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+  <section class="full-width">
+    <ion-button color="success" (click)="select()" style=" margin-left: 10px;" >Select</ion-button>
+  </section>
+  <br>
+
+  <ion-list value="Slots-Clients">
+    <ion-list-header> My Appointments</ion-list-header>
+
+    <ion-item *ngFor="let appointment of appointments;">
+      <ion-label>{{appointment.trainer.name}} {{appointment.trainer.surname}}</ion-label>
+      <ion-label>{{appointment.mySlot}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <br>
+  <section class="full-width">
+    <ion-button color="success" style=" margin-left: 10px;" (click)="back()">Back</ion-button>
+  </section>
+</ion-content>

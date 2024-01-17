@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Admin Log In</ion-title>
+  </ion-toolbar>
+  <style>
+    .clickable {
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+  </style>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full" class="ion-no-margin">
+    <ion-list-header lines="full">
+      <ion-label color="dark" style="font-size:17px"> Enter Your Account Information </ion-label>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Username</ion-label>
+      <ion-input  [(ngModel)]="username" placeholder="username.." type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input  [(ngModel)]="password" placeholder="password.." type="password"></ion-input>
+    </ion-item>
+    <section class="full-width">
+      <ion-button (click)="adminHome()" class="clickable">Log In</ion-button>
+      <ion-button (click)="goHome()" class="clickable">Back</ion-button>
+    </section>
+  </ion-list>
+</ion-content>

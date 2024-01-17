@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Admin Home
+    </ion-title>
+  </ion-toolbar>
+  <style>
+    .choose {
+        height: 25vh;
+        font-size:25px;
+      }
+  </style>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <section class="full-width">
+    <ion-button (click)="seeClients()" class="choose" expand="full" color="danger">See Client List</ion-button>
+  </section>
+  <section class="full-width">
+    <ion-button (click)="availableHours()" class="choose" expand="full" color="success">Submit Available Hours</ion-button>
+  </section>
+  <section class="full-width">
+    <ion-button (click)="removeSlot()" class="choose" expand="full" color="dark">Remove Slot</ion-button>
+  </section>
+
+  <section class="full-width">
+    <ion-button (click)="logOut()" >Log Out</ion-button>
+  </section>
+</ion-content>

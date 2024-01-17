@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      User Home
+    </ion-title>
+  </ion-toolbar>
+  <style>
+    .choose {
+        height: 70vh;
+        font-size:25px;
+      }
+      .clickable {
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+  </style>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" style="--ion-background-color:rgb(236, 235, 152);">
+  
+  <ion-radio-group value="Trainers" [(ngModel)]="selected">
+    <ion-list-header>
+      <ion-label>Trainers</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let trainer of trainers;">
+      <ion-label>{{trainer.name}} {{trainer.surname}}</ion-label>
+      <ion-radio slot="start" checked="true" value="{{trainer.username}}"></ion-radio>
+    </ion-item>
+
+  </ion-radio-group>
+  <section class="full-width">
+    <ion-button color="warning" class ="clickable" (click)="getAppointment()" >Get Appointment</ion-button>
+  </section>
+  <br><br>
+  <section class="full-width">
+    <ion-button color="warning" class ="clickable" (click)="seeAppointments()" >See My Appointments</ion-button>
+  </section>
+
+  <section class="full-width">
+    <ion-button color="warning"  class ="clickable"  (click)="logOut()" >Log Out</ion-button>
+  </section>
+</ion-content>
+

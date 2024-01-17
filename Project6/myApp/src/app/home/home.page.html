@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Fitness Center
+    </ion-title>
+  </ion-toolbar>
+  <style>
+    .choose {
+        height: 31vh;
+        font-size:25px;
+      }
+      #title{
+        height: 10vh;
+      }
+  </style>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <section class="full-width">
+    <ion-button (click)="adminLogIn()" class="choose" expand="full" color="danger">Admin Log In</ion-button>
+  </section>
+  <section class="full-width">
+    <ion-button (click)="userLogIn()" class="choose" expand="full" color="success">User Log In</ion-button>
+  </section>
+  <section class="full-width">
+    <ion-button (click)="signUp()" class ="choose" expand="full" color="tertiary">Sign Up</ion-button>
+  </section>
+</ion-content>
